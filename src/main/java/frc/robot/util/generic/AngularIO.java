@@ -1,4 +1,4 @@
-package frc.robot.util.genericsystem;
+package frc.robot.util.generic;
 
 import org.littletonrobotics.junction.AutoLog;
 

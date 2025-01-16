@@ -42,24 +42,39 @@ public class SwerveConfig {
 
   static final ModuleConfig FL_MODULE_CONFIG =
       new ModuleConfig(
-          getMk4iDriveTalonConfig(), getMk4iSteerTalonConfig(), getCancoderConfig(0.26904296875));
+          0.26904296875,
+          getMk4iDriveTalonConfig(),
+          getMk4iSteerTalonConfig(),
+          getCancoderConfig(0.26904296875));
   static final ModuleConfig BL_MODULE_CONFIG =
       new ModuleConfig(
-          getMk4iDriveTalonConfig(), getMk4iSteerTalonConfig(), getCancoderConfig(0.12353515625));
+          0.12353515625,
+          getMk4iDriveTalonConfig(),
+          getMk4iSteerTalonConfig(),
+          getCancoderConfig(0.12353515625));
   static final ModuleConfig BR_MODULE_CONFIG =
       new ModuleConfig(
-          getMk4iDriveTalonConfig(), getMk4iSteerTalonConfig(), getCancoderConfig(0.1640625));
+          0.1640625,
+          getMk4iDriveTalonConfig(),
+          getMk4iSteerTalonConfig(),
+          getCancoderConfig(0.1640625));
   static final ModuleConfig FR_MODULE_CONFIG =
       new ModuleConfig(
-          getMk4iDriveTalonConfig(), getMk4iSteerTalonConfig(), getCancoderConfig(0.35302734375));
+          0.35302734375,
+          getMk4iDriveTalonConfig(),
+          getMk4iSteerTalonConfig(),
+          getCancoderConfig(0.35302734375));
 
   static final double DRIVE_REDUCTION = Mk4iReductions.L3.reduction;
   static final double STEER_REDUCTION = Mk4iReductions.TURN.reduction;
+  static final double DRIVE_KG_METER_SQUARED = 0.025;
+  static final double STEER_KG_METER_SQUARED = 0.004;
 
   static final double DRIVE_FF_KT =
       DCMotor.getKrakenX60Foc(1).withReduction(DRIVE_REDUCTION).KtNMPerAmp;
 
   record ModuleConfig(
+      double offset,
       TalonFXConfiguration driveTalonConfig,
       TalonFXConfiguration steerTalonConfig,
       CANcoderConfiguration cancoderConfig) {}
@@ -144,12 +159,12 @@ public class SwerveConfig {
     }
   }
 
-  public static Pose3d ZERO_FL =
+  public static Pose3d FL_MODULE_ZEROED_POSE =
       new Pose3d(+WHEELBASE_LENGTH_METER / 2., +WHEELBASE_WIDTH_METER / 2., 0, new Rotation3d());
-  public static Pose3d ZERO_BL =
+  public static Pose3d BL_MODULE_ZEROED_POSE =
       new Pose3d(-WHEELBASE_LENGTH_METER / 2., +WHEELBASE_WIDTH_METER / 2., 0, new Rotation3d());
-  public static Pose3d ZERO_BR =
+  public static Pose3d BR_MODULE_ZEROED_POSE =
       new Pose3d(-WHEELBASE_LENGTH_METER / 2., -WHEELBASE_WIDTH_METER / 2., 0, new Rotation3d());
-  public static Pose3d ZERO_FR =
+  public static Pose3d FR_MODULE_ZEROED_POSE =
       new Pose3d(+WHEELBASE_LENGTH_METER / 2., -WHEELBASE_WIDTH_METER / 2., 0, new Rotation3d());
 }

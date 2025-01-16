@@ -1,4 +1,4 @@
-package frc.robot.util.genericsystem;
+package frc.robot.util.generic;
 
 public interface AngularPositionIO extends AngularIO {
   default void setPosition(double positionRad) {}

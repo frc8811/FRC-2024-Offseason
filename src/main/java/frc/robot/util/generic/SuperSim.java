@@ -1,4 +1,4 @@
-package frc.robot.util.genericsystem;
+package frc.robot.util.generic;
 
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.ProfiledPIDController;
@@ -26,7 +26,7 @@ public abstract class SuperSim implements AngularIO {
   }
 
   @Override
-  public void updateInputs(AngularIO.AngularIOInputs inputs) {
+  public void updateInputs(AngularIOInputs inputs) {
     if (DriverStation.isDisabled()) {
       stop();
       setVoltage(voltageLimiter.calculate(appliedVoltageVolt));

@@ -1,4 +1,4 @@
-package frc.robot.util.genericsystem;
+package frc.robot.util.generic;
 
 import edu.wpi.first.math.system.plant.DCMotor;
 import edu.wpi.first.math.trajectory.TrapezoidProfile;

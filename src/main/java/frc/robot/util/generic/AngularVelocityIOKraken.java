@@ -1,4 +1,4 @@
-package frc.robot.util.genericsystem;
+package frc.robot.util.generic;
 
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import edu.wpi.first.math.util.Units;

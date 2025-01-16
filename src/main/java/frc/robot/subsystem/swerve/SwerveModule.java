@@ -4,7 +4,9 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import frc.robot.util.Alert;
 import frc.robot.util.LoggedTunableNumber;
-import frc.robot.util.genericsystem.*;
+import frc.robot.util.generic.AngularIOInputsAutoLogged;
+import frc.robot.util.generic.AngularPositionIO;
+import frc.robot.util.generic.AngularVelocityIO;
 import org.littletonrobotics.junction.Logger;
 
 public class SwerveModule {

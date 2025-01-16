@@ -1,4 +1,4 @@
-package frc.robot.util.genericsystem;
+package frc.robot.util.generic;
 
 public interface AngularVelocityIO extends AngularIO {
   default void setVelocity(double velRadPerSec) {}

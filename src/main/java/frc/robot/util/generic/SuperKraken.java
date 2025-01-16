@@ -1,4 +1,4 @@
-package frc.robot.util.genericsystem;
+package frc.robot.util.generic;
 
 import com.ctre.phoenix6.BaseStatusSignal;
 import com.ctre.phoenix6.StatusSignal;
@@ -7,14 +7,13 @@ import com.ctre.phoenix6.controls.*;
 import com.ctre.phoenix6.hardware.TalonFX;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.units.measure.*;
+import frc.robot.util.Device;
 import frc.robot.util.driver.CanId;
 import frc.robot.util.driver.PhoenixHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class SuperKraken implements AngularIO {
-  protected final String name;
-
+public abstract class SuperKraken extends Device implements AngularIO {
   protected final TalonFX master;
   protected final List<TalonFX> slaves = new ArrayList<>();
   protected final TalonFXConfiguration masterConfig;
@@ -37,7 +36,7 @@ public abstract class SuperKraken implements AngularIO {
 
   public SuperKraken(
       String name, CanId id, TalonFXConfiguration talonConfig, double homePositionDegree) {
-    this.name = name;
+    super(name, id);
     master = new TalonFX(id.id(), id.bus());
     masterConfig = talonConfig;
 
