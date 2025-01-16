@@ -4,7 +4,7 @@ import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import edu.wpi.first.math.util.Units;
 import frc.robot.util.driver.CanId;
 
-public class LinearPositionIOKraken extends AngularPositionIOKraken implements AngularIO {
+public class LinearPositionIOKraken extends AngularPositionIOKraken implements AngularPositionIO {
   private static double meter2degree;
 
   public LinearPositionIOKraken(
@@ -21,6 +21,13 @@ public class LinearPositionIOKraken extends AngularPositionIOKraken implements A
   public void setPosition(double positionMeter) {
     master.setControl(
         positionSetter.withPosition(Units.radiansToDegrees(positionMeter * meter2degree)));
+    setSlavesFollow();
+  }
+
+  @Override
+  public void setPosition(double positionMeter, double feedforward) {
+    master.setControl(
+        motionMagicSetter.withPosition(positionMeter * meter2degree).withFeedForward(feedforward));
     setSlavesFollow();
   }
 
