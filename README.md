@@ -1,6 +1,6 @@
 # FRC 2024 Offseason
 
-The 8811 team’s offseason project in 2024, which is an improvement of the code used in the 2023 FRC Off-season China, with the competition theme being the 2022 RAPID REACT
+The 8811 team’s offseason project in 2024, which is an improvement of the code used in the 2023 FRC Off-season China, with the competition theme being the 2022 RAPID REACT.
 
 ![](./assets/rapidreact.png)
 
