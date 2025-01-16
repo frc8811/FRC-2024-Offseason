@@ -1,8 +1,14 @@
 package frc.robot;
 
+import com.ctre.phoenix6.configs.TalonFXConfiguration;
+import frc.robot.util.genericsystem.AngularPositionIOKraken;
+import frc.robot.util.driver.CanId;
 import org.littletonrobotics.junction.LoggedRobot;
 
 public class Robot extends LoggedRobot {
+  AngularPositionIOKraken kraken =
+      new AngularPositionIOKraken("a", new CanId(1, "rio"), new TalonFXConfiguration(), 0);
+
   public Robot() {}
 
   public void robotPeriodic() {}
